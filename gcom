@@ -1,0 +1,50 @@
+#!/bin/bash
+
+echo ""
+echo "============================================="
+echo "Compile and build fortran file in single time"
+echo "============================================="
+
+display_usage(){
+	echo ""
+	echo "How To Use This?"
+	echo ""
+	echo "gcom --input fortran_file"
+	echo "HELP: gcom --help or -h"
+	echo ""
+	echo "To run this script, you have to install gfortran compiler."
+	echo ""
+	echo "The script is created by Aulia Khalqillah, S.Si (2019)"
+	echo "email : auliakhalqillah.mail@gmail.com"
+	echo ""
+	}
+
+# check whether user had supplied -h or --help . If yes display usage
+        if [[ ( $1 == "--help") ||  $1 == "-h" ]]
+        then
+                display_usage
+                exit 1
+        fi
+
+# Input file fortran
+
+        if [[ ( $# == "--input") ]]
+        then
+                exit 0
+        fi
+
+input=${2?Error: Can not read input fortran file}
+
+lenfile=${#input}
+exefile=${input:0:lenfile-4}
+
+if [ -f "$exefile" ]; then
+	rm $exefile $exefile.o
+	gfortran -c $input
+	gfortran -o $exefile $exefile.o
+	./$exefile
+else
+	gfortran -c $input
+	gfortran -o $exefile $exefile.o
+	./$exefile
+fi
