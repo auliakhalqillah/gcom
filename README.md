@@ -14,7 +14,7 @@ gcom direct to execute the hellowrold.f95 through helloworld executable file
 1. Save the gcom's folder in folder that do you want (example: in packages's folder, /home/packages/gcom)
 2. Open your .bashrc through terminal and type PATH=/home/packages/gcom:$PATH in the last line. 
 3. Save your .bashrc and close the editor.
-4. Type source .bashrc (press enter)
+4. Type source .bashrc in terminal and press enter
 5. To check gcom, type:
 ```
 gcom --help or gcom -h
