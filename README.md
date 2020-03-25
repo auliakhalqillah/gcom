@@ -1,4 +1,4 @@
-# gcom
+# shortcut of gfortran compiler
 gcom is bash script to compile fortran program in single time through the terminal. It works in Linux OS and Mac OS.
 # How To Use?
 Open your terminal and go to the directory where the fortran program saved and type:
@@ -7,7 +7,7 @@ gcom --input fortran_file
 ```
 for example:
 ```
-gcom --inpt helloworld.f95
+gcom --input helloworld.f95
 ```
 gcom direct to execute the hellowrold.f95 through helloworld executable file
 # How To Install gcom
